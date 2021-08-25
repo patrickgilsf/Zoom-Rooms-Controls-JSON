@@ -1,0 +1,58 @@
+{
+  "adapters": [
+    {
+      "model": "GenericNetworkAdapter",
+      "ip": "tcp://172.16.10.14:4999",
+      "ports": [
+        {
+          "id": "generic",
+          "name": "Biamp",
+          "methods": [
+                {
+                  "id": "poweron",
+                  "name": "Power On",
+                  "value": "DEVICE recallPreset 1001"
+                },
+                {
+                  "id": "poweroff",
+                  "name": "Power Off",
+                  "value": "DEVICE recallPreset 1002"
+                },
+                {
+                  "id": "lvlup",
+                  "name": "Up",
+                  "value": "Level9 increment level 1 2.5"
+                },  
+		{
+                  "id": "lvldwn",
+                  "name": "Down",
+                  "value": "Level9 decrement level 1 2.5"
+                } 
+	}                   
+              ],
+              "type": "actions"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "styles": [
+    "generic.poweron.icon=icon_power",
+    "generic.poweroff.icon=icon_power",
+    "generic.lvlup.icon=icon_up",
+    "generic.lvldwn.icon=icon_down"
+  ],
+  "rules": {
+    "meeting_started": [],
+    "meeting_ended": [],
+    "microphone_muted": [
+      "generic.ledcolor.red"
+    ],
+    "microphone_unmuted": [
+      "generic.ledcolor.green"
+    ],
+    "video_started": [],
+    "video_stopped": []
+  }
+}

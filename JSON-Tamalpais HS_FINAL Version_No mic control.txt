@@ -1,0 +1,133 @@
+{
+	"about": {
+    "type": "Tamalpais HS ZRC",
+    "created": "July 23, 2021"
+  },
+	"adapters": [
+		{
+			"model": "GenericNetworkAdapter",
+			"ip": "tcp://172.16.10.10:1702",
+			"ports": [
+				{
+					"id": "qsys",
+					"name": "System Control",
+					"methods": [
+					{
+						"id": "syspower",
+						"name": "System Power",
+						"command": "ssl syspower %\r 1\n",
+						"params": [
+							{
+								"id": "off",
+								"name": "Off",
+								"value": "1"
+							},
+							{
+								"id": "on",
+								"name": "On",
+								"value": "2"
+							}
+						],
+						"type": "actions"
+					},
+					{
+						"id": "ceilingmicmute",
+						"name": "Ceiling Mic",
+						"command": "csv ceiling.mt %\r\n",
+						"params": [
+							{
+								"id": "mute",
+								"name": "Mute",
+								"value": "1"
+							},
+							{
+								"id": "unmute",
+								"name": "Unmute",
+								"value": "0"
+							}
+						],
+						"type": "actions"
+					},
+					{
+						"id": "display1",
+						"name": "Display 1",
+						"command": "csv display1% 1\r\n",
+						"params": [
+							{
+								"id": "off",
+								"name": "Off",
+								"value": "off"
+							},
+							{
+								"id": "on",
+								"name": "On",
+								"value": "on"
+							}
+						],
+						"type": "actions"
+					},
+					{
+						"id": "display2",
+						"name": "Display 2",
+						"command": "csv display2% 1\r\n",
+						"params": [
+							{
+								"id": "off",
+								"name": "Off",
+								"value": "off"
+							},
+							{
+								"id": "on",
+								"name": "On",
+								"value": "on"
+							}
+						],
+						"type": "actions"
+					}					
+					]
+				}
+			]			
+		}
+	],
+	"styles": [
+		"qsys.icon=icon_rack_equipment",
+		"qsys.syspower.icon=icon_power",
+		"qsys.mic1lvl.up.icon=icon_up",
+		"qsys.mic1lvl.down.icon=icon_down",
+		"qsys.mic2lvl.up.icon=icon_up",
+		"qsys.mic2lvl.down.icon=icon_down",
+		"qsys.mic3lvl.up.icon=icon_up",
+		"qsys.mic3lvl.down.icon=icon_down",
+		"qsys.mic4lvl.up.icon=icon_up",
+		"qsys.mic4lvl.down.icon=icon_down",
+		"qsys.mic5lvl.up.icon=icon_up",
+		"qsys.mic5lvl.down.icon=icon_down",
+		"qsys.mic6lvl.up.icon=icon_up",
+		"qsys.mic6lvl.down.icon=icon_down",
+		"qsys.mic7lvl.up.icon=icon_up",
+		"qsys.mic7lvl.down.icon=icon_down",
+		"qsys.mic8lvl.up.icon=icon_up",
+		"qsys.mic8lvl.down.icon=icon_down",
+		"qsys.mic9lvl.up.icon=icon_up",
+		"qsys.mic9lvl.down.icon=icon_down",
+		"qsys.mic10lvl.up.icon=icon_up",
+		"qsys.mic10lvl.down.icon=icon_down",
+		"qsys.mic11lvl.up.icon=icon_up",
+		"qsys.mic11lvl.down.icon=icon_down",
+		"qsys.mic12lvl.up.icon=icon_up",
+		"qsys.mic12lvl.down.icon=icon_down",
+		"qsys.ceilingmicmute.icon=icon_ceiling_mic",
+		"qsys.display1.icon=icon_tv",
+		"qsys.display2.icon=icon_tv"
+		
+	],
+	"rules": 
+		{
+			"meeting_started": [],
+			"meeting_ended": [],		
+			"microphone_muted": [],
+			"microphone_unmuted": [],
+			"video_started": [],
+			"video_stopped": []
+		}
+}
